@@ -1,0 +1,29 @@
+Algoritmo "Maior e Menor numero"
+
+Var
+primeiroNumero: inteiro
+segundoNumero: inteiro
+maiorNumero: inteiro
+menorNumero: inteiro
+Inicio
+escreva("Digite o primeiro numero: ")
+leia(primeiroNumero)
+
+escreva("Digite o segundo numero: ")
+leia(segundoNumero)
+
+se primeiroNumero > segundoNumero entao
+   maiorNumero <- primeiroNumero
+   menorNumero <- segundoNumero
+senao
+     maiorNumero <- segundoNumero
+     menorNumero <- primeiroNumero
+fimse
+
+escreval
+escreval("Primeiro número: ", primeiroNumero)
+escreval("Segundo número: ", segundoNumero)
+escreval
+escreval("Maior número: ", maiorNumero)
+escreval("Menor número: ",menorNumero)
+Fimalgoritmo
