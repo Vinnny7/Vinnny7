@@ -1,0 +1,26 @@
+Algoritmo "Exibir_Numeros_Ordem_Digitacao_e_Ordenados"
+Var
+    numeros: vetor[1..10] de inteiro
+    i, j, temp: inteiro
+
+Inicio
+    Para i de 1 ate 10 faca
+        Escreva("Digite o ", i, "º número: ")
+        Leia(numeros[i])
+    FimPara
+
+    Para i de 1 ate 9 faca
+        Para j de i+1 ate 10 faca
+            Se numeros[i] > numeros[j] Entao
+                temp <- numeros[i]
+                numeros[i] <- numeros[j]
+                numeros[j] <- temp
+            FimSe
+        FimPara
+    FimPara
+
+    Escreva("Os números digitados foram: ")
+    Para i de 1 ate 10 faca
+        Escreva(numeros[i], " ")
+    FimPara
+FimAlgoritmo
