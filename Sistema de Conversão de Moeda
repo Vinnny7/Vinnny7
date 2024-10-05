@@ -1,0 +1,53 @@
+import customtkinter as ctk
+from tkinter import messagebox
+
+ctk.set_appearance_mode('dark')
+#----- funções -----
+def calculo():
+    v = float(valor.get())
+    c = float(cotacao.get())
+
+    valorfinal = v*c
+    messagebox.showinfo('Resultado', f'O valor em R$ {valorfinal}')
+
+
+#----------by Vini----------
+
+janela = ctk.CTk()
+janela.geometry('600x350')
+janela.resizable(False,False)
+janela.title('Sistema de Conversão de Moedas')
+janela.iconbitmap('monetizationdollarmoney_122856.ico')
+
+ctk.CTkLabel(janela,
+             text='Sistema de Conversão',
+             text_color='red',
+             font=('arial',25,'bold')).pack(pady=15)
+
+
+valor = ctk.CTkEntry(janela,
+                     width=350,
+                     height=45,
+                     placeholder_text='Digite o valor em dolar: ')
+
+valor.pack()
+
+cotacao = ctk.CTkEntry(janela,
+                     width=350,
+                     height=45,
+                     placeholder_text='Digite a cotaçao atual do dolar: ')
+
+cotacao.pack(pady= 15)
+
+botao = ctk.CTkButton(janela,
+                     text='Calcular',
+                     width=150,
+                     height=40,
+                     fg_color='red',
+                     text_color='black',
+                     command=calculo)
+
+botao.pack(pady=15)
+
+
+janela.mainloop()
