@@ -1,0 +1,66 @@
+import customtkinter as ctk
+
+ctk.set_appearance_mode('dark')
+
+#----- Funçoes -----
+
+def imc():
+    p = int(peso.get())
+    
+    a = float(altura.get())
+
+    calculo = p/(a*a)
+
+    if(calculo<18.5):
+        situaçao = 'Magro'
+    elif(calculo>=18.5 and calculo<25):
+        situaçao = 'Peso Ideal'
+    elif(calculo>=25 and calculo<30):
+        situaçao = 'Sobrepeso'
+    else:
+        situaçao = 'Obesidade'
+
+    resultado.configure(text=f'O seu imc é {calculo:.1f} \n Voçe está {situaçao}')
+
+
+#-------------------------------
+janela = ctk.CTk()
+janela.geometry('500x500')
+janela.resizable(False,False)
+
+#-----------------------------------------
+
+ctk.CTkLabel(janela,
+             text='APP SAÚDE 2024',
+             text_color='red',
+             font=('Arial',30,'bold')).pack(pady=10)
+
+peso = ctk.CTkEntry(janela,
+                    width=400,
+                    height=40,
+                    placeholder_text='Digite seu peso')
+peso.pack(pady=10)
+
+altura = ctk.CTkEntry(janela,
+                    width=400,
+                    height=40,
+                    placeholder_text='Digite seu altura')
+altura.pack(pady=10)
+
+botao = ctk.CTkButton(janela,
+                      width=200,
+                      height=60,
+                      text='Calcular IMC',
+                      font=('arial',20),
+                      command=imc)
+
+botao.pack(pady=10)
+
+resultado = ctk.CTkLabel(janela,
+                         text='',
+                         font=('arial',20))
+
+resultado.pack(pady=10)
+
+
+janela.mainloop()
